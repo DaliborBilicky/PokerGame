@@ -1,7 +1,11 @@
 # ---------------------------------- WINDOW ---------------------------------- #
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 720
 WINDOW_TITLE = "Poker"
-WINDOW_ICON = "assets\\icon.ico"
+datafile = "assets\\icon.ico"
+if not hasattr(sys, "frozen"):
+    WINDOW_ICON = os.path.join(os.path.dirname(__file__), datafile)
+else:
+    WINDOW_ICON = os.path.join(sys.prefix, datafile)
 
 # Applies to the entire code
 FONT = "Arial"
